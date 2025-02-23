@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Link custom CSS -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <header class="container-fluid text-center text-white bg-black p-2 weather-header">
+    <h1>Weather Dashboard</h1>
+  </header>
+  <!-- max-width for ultra wide resolutions -->
+  <main class="container-fluid">
+    <div class="row">
+      <!-- Weather search -->
+      <aside class="col-lg-3 pb-3">
+        <div class="weather-section">
+          <h2 id="form-heading" class="mt-1 h3 form-label">
+            Search for a City:
+          </h2>
+          <form id="search-form" class="form">
+            <div class="form-group mb-3">
+              <input class="form-control weather-search" type="text" id="search-input" placeholder="Delhi"
+                aria-labelledby="form-heading" aria-controls="today forecast" />
+            </div>
+            <div class="form-group mb-3">
+              <button id="search-button" type="submit" class="btn btn-outline-success w-100" aria-label="submit search">
+                Search
+              </button>
+             
+            </div>
+          </form>
+        </div>
+        <!-- Weather history -->
+        <div class="weather-section">
+          <div class="list-group" id="history"></div>
+          <hr />
+          <div id="refresh-history-btn" class="btn btn-outline-info mb-3 w-75 w-100">Refresh</div>
+          <div id="clear-history-btn" class="btn btn-outline-danger w-100">Clear</div>
+        </div>
+      </aside>
+      <!-- Weather forecast -->
+      <div class="col-lg-9 pb-3">
+        <!-- Today's forecast -->
+        <section id="today" class="mt-2" role="region" aria-live="polite"></section>
+        <!-- Five day forecast -->
+        <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
+      </div>
+    </div>
+
+    <!-- Bootstrap Modal for Invalid City Name -->
+    <div class="modal fade" id="invalid-city-name-modal" tabindex="-1" aria-labelledby="invalidCityModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="invalidCityModalLabel">Invalid City Name</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Please enter a valid city name containing only letters and spaces.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Day.js -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script type="module" src="scripts/index.js"></script>
+</body>
+
+</html>

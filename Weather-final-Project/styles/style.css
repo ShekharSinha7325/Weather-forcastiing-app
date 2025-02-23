@@ -1,0 +1,33 @@
+.container-fluid{
+    background-color: grey;
+    max-width: 1400px"
+}
+
+
+#form-heading {
+    color: #fff;
+}
+#search-input{
+    background-color:whitesmoke;
+}
+#history{
+    border-color: black;
+}
+
+.container-fluid h1 {
+    background: lightslategray;
+}
+
+.col-md-3{
+    color:whitesmoke;
+}
+.card-body{
+    background-color:rgb(18, 13, 13);
+}
+.card-text{
+    color: #fff;
+}
+.card-header{
+    background-color: green;
+}
+
